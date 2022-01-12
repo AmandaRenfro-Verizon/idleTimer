@@ -1,0 +1,37 @@
+<!-- Test Idle Timer for Web Pages -->
+<!DOCTYPE html>
+
+
+<HTML5>
+
+    <body>
+        <p>Hi Steve</p>
+
+        <script>
+            const timeoutInMiliseconds = 3000;
+            let timeoutId; 
+              
+            function startTimer() {
+                timeoutId = window.setTimeout(doInactive, timeoutInMiliseconds)
+            }
+              
+            function doInactive() {
+                window.alert("Still have questions? Book a time to speak to our team and find the right solution.");
+            }
+             
+            function setupTimers () {
+                document.addEventListener("mousemove", startTimer, false);
+                document.addEventListener("mousedown", startTimer, false);
+                document.addEventListener("keypress", startTimer, false);
+                document.addEventListener("touchmove", startTimer, false);
+                 
+                startTimer();
+            }
+            
+            setupTimers();
+             
+            
+            </script>
+    </body>
+</HTML5>
+<!-- http://127.0.0.1:8000 -->
