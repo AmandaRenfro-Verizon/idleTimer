@@ -18,12 +18,17 @@
             function doInactive() {
                 window.alert("Still have questions? Book a time to speak to our team and find the right solution.");
             }
+
+            function resetTimer() { 
+                window.clearTimeout(timeoutId)
+                startTimer();
+            }
              
             function setupTimers () {
-                document.addEventListener("mousemove", startTimer, false);
-                document.addEventListener("mousedown", startTimer, false);
-                document.addEventListener("keypress", startTimer, false);
-                document.addEventListener("touchmove", startTimer, false);
+                document.addEventListener("mousemove", resetTimer, false);
+                document.addEventListener("mousedown", resetTimer, false);
+                document.addEventListener("keypress", resetTimer, false);
+                document.addEventListener("touchmove", resetTimer, false);
                  
                 startTimer();
             }
